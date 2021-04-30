@@ -31,7 +31,7 @@
                             <div class="flex items-center">
                                 <div class="ml-4 text-lg leading-7 font-semibold"><a href="/pizza/create" class="underline text-gray-900 dark:text-white">Order Pizza</a></div>
                             </div>
-
+                    <p class="mssg">{{ session('mssg') }} </p>
                             
 
                 <div class="flex justify-center mt-4 sm:items-center sm:justify-between">

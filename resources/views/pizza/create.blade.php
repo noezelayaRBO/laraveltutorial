@@ -55,7 +55,8 @@
                             </div>
                             <div class="wrapper create-pizza">
                                 <h1>Create a new order</h1>
-                                <form action="" method="">
+                                <form action="/pizzas" method="POST">
+                                    @csrf
                                     <label for="name">Your name:</label>
                                     <input type="text" id="name" name="name"><br>
                                     <label for="type">Choose your type:</label>
@@ -65,12 +66,19 @@
                                         <option value="volcano">Volcano</option>
                                     </select><br>
                                     <label for="type">Choose your base:</label>
-                                    <select name="type" id="type">
+                                    <select name="base" id="base">
                                         <option value="cheesy crust">cheesy crust</option>
                                         <option value="garlic crust">garlic crust</option>
                                         <option value="thin & crispy">Thin & crispy</option>
                                         <option value="thick">Thick</option>
                                     </select><br>
+                                    <fieldset>
+                                        <label>Extra toppings </label><br>
+                                        <input type="checkbox" name="toppings[]" value="mushrooms">Mushrooms<br />
+                                        <input type="checkbox" name="toppings[]" value="peppers">Peppers<br />
+                                        <input type="checkbox" name="toppings[]" value="gralic">Garlic<br />
+                                        <input type="checkbox" name="toppings[]" value="olives">Olives<br />
+                                    </fieldset>
                                     <input type="submit" value="Order Pizza">
                                     <a href="/">Back</a>
                                 </form>

@@ -35,7 +35,16 @@
                                 <h1> Order for {{$pizza->name}} </h1>
                                 <p class="type"> Type - {{$pizza->type}} </p>
                                 <p class="base"> Base - {{$pizza->base}} </p>
-                                <a href="/pizza" class="back">back</a>
+                                <p class="toppings">Extra toppings: </p>
+                                <ul>
+                                    @foreach($pizza->toppings as $toppings)
+                                    <li>{{ $toppings }} </li>
+                                    @endforeach
+                                </ul>
+                                <a href="/delete/{{$pizza->id}}"><button>Complete Order</button></a>
+                                        @csrf
+                                        @method('DELETE')
+                                <a href="/" class="back">back</a>
                             </div>
 
 
