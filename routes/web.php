@@ -16,9 +16,13 @@ use App\Http\Controllers\PizzaController;
 
 Route::get('/', [pizzaController::class,'welcome']);
 Route::get('/pizza', [pizzaController::class,'index']);  
-Route::get('/pizza/create', [pizzaController::class,'create'] );
+Route::get('/order/pizza/create', [pizzaController::class,'create'] )->name('pizza.create')->middleware('auth');
 Route::post('/pizzas', [pizzaController::class, 'store']);
 Route::get('/pizza/{id}', [pizzaController::class,'show']);
 Route::get('/delete/{id}',[pizzaController::class,'destroy']);
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

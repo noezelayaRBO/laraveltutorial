@@ -8,10 +8,14 @@ Use App\Models\Pizza;
 
 class pizzaController extends Controller
 {
+    public function __construct(){
+        //$this->middleware('auth');
+
+    }
+
     public function index(){
         
         return view('pizza.index',[ 
-        
             'name' => request('name'),
             'age' => request('age'),
             ]);
